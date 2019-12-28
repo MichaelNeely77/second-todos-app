@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/new', [
     'uses' => 'PagesController@new'
 ]);
+
+Route::get('/tasks', [
+    'uses' => 'TasksController@index'
+]);
