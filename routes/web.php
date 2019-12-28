@@ -22,3 +22,7 @@ Route::get('/new', [
 Route::get('/tasks', [
     'uses' => 'TasksController@index'
 ]);
+
+Route::post('/create/task', [
+    'uses' => 'TasksController@store'
+]);

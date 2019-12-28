@@ -16,4 +16,16 @@ class TasksController extends Controller
 
         return view('tasks')->with('tasks', $tasks);
     }
+
+    public function store(Request $request) 
+    {
+
+        $task = new Task;
+
+        $task->task = $request->task;
+
+        $task->save();
+
+        return redirect()->back();
+    }
 }
