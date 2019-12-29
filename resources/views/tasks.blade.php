@@ -14,7 +14,7 @@
     </div>
     <hr>
     @foreach($tasks as $task)
-        {{ $task->task }}
+        {{ $task->task }} <a href="{{ route('task.delete', ['id' => $task->id]) }}" class="btn btn-danger">Delete Task</a>
         <hr>
     @endforeach
 

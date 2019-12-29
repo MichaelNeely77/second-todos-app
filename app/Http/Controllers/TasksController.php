@@ -28,4 +28,13 @@ class TasksController extends Controller
 
         return redirect()->back();
     }
+
+    public function delete($id) 
+    {
+        $task = Task::find($id);
+
+        $task->delete();
+
+        return redirect()->back();
+    }
 }

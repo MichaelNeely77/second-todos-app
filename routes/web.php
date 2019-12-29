@@ -23,6 +23,11 @@ Route::get('/tasks', [
     'uses' => 'TasksController@index'
 ]);
 
+Route::get('/task/delete/{id}', [
+    'uses' => 'TasksController@delete',
+    'as' => 'task.delete'
+]);
+
 Route::post('/create/task', [
     'uses' => 'TasksController@store'
 ]);
