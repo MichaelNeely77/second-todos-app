@@ -50,6 +50,12 @@ class TasksController extends Controller
 
     public function save(Request $request, $id)
     {
-        dd($request->all());
+        $task = Task::find($id);
+
+        $task->task = $request->task;
+
+        $task->save();
+
+        return redirect()->route('tasks');
     }
 }

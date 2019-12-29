@@ -20,7 +20,8 @@ Route::get('/new', [
 ]);
 
 Route::get('/tasks', [
-    'uses' => 'TasksController@index'
+    'uses' => 'TasksController@index',
+    'as' => 'tasks'
 ]);
 
 Route::get('/task/delete/{id}', [
