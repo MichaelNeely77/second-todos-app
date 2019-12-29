@@ -15,6 +15,7 @@
     <hr>
     @foreach($tasks as $task)
         {{ $task->task }} <a href="{{ route('task.delete', ['id' => $task->id]) }}" class="btn btn-danger">Delete Task</a>
+        <a href="{{ route('task.update', ['id' => $task->id]) }}" class="btn btn-info btn-xs">Update Task</a>
         <hr>
     @endforeach
 

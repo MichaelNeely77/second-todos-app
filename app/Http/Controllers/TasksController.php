@@ -37,4 +37,19 @@ class TasksController extends Controller
 
         return redirect()->back();
     }
+
+    
+    public function update($id) 
+    {
+        $task = Task::find($id);
+
+        return view('update')->with('task', $task);
+
+
+    }
+
+    public function save(Request $request, $id)
+    {
+        dd($request->all());
+    }
 }

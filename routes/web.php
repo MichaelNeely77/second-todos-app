@@ -28,6 +28,16 @@ Route::get('/task/delete/{id}', [
     'as' => 'task.delete'
 ]);
 
+Route::get('/task/update/{id}', [
+    'uses' => 'TasksController@update',
+    'as' => 'task.update'
+]);
+
+Route::post('/task/save/{id}', [
+    'uses' => 'TasksController@save',
+    'as' => 'tasks.save'
+]);
+
 Route::post('/create/task', [
     'uses' => 'TasksController@store'
 ]);
