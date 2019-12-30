@@ -58,4 +58,16 @@ class TasksController extends Controller
 
         return redirect()->route('tasks');
     }
+
+    public function completed($id)
+    {
+        $task = Task::find($id);
+
+        $task->completed = 1;
+
+        $task->save();
+
+        return redirect()->back();
+
+    }
 }

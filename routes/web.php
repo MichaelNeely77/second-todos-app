@@ -42,3 +42,8 @@ Route::post('/task/save/{id}', [
 Route::post('/create/task', [
     'uses' => 'TasksController@store'
 ]);
+
+Route::get('/tasks/completed/{id}', [
+    'uses' => 'TasksController@completed',
+    'as' => 'tasks.completed'
+]);
