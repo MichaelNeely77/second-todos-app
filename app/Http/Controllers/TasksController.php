@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Session;
+
 use App\Task;
 
 use Illuminate\Http\Request;
@@ -26,6 +28,8 @@ class TasksController extends Controller
 
         $task->save();
 
+        Session::flash('success', 'Your task was created');
+
         return redirect()->back();
     }
 
@@ -34,6 +38,8 @@ class TasksController extends Controller
         $task = Task::find($id);
 
         $task->delete();
+
+        Session::flash('success', 'Your task was deleted');
 
         return redirect()->back();
     }
@@ -56,6 +62,8 @@ class TasksController extends Controller
 
         $task->save();
 
+        Session::flash('success', 'Your task was updated');
+
         return redirect()->route('tasks');
     }
 
@@ -66,6 +74,8 @@ class TasksController extends Controller
         $task->completed = 1;
 
         $task->save();
+
+        Session::flash('success', 'Your task was completed');
 
         return redirect()->back();
 
